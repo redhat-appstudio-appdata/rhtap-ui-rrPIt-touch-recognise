@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: rhtap-ui
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: rhtap-ui
+    app.kubernetes.io/part-of: rhtap-ui
+  name: rhtap-ui
+spec:
+  ports:
+  - name: "3001"
+    port: 3001
+    targetPort: 3001
+  selector:
+    app.kubernetes.io/instance: rhtap-ui
+status:
+  loadBalancer: {}
